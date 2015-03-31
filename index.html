@@ -8,7 +8,9 @@
     <title>Cameron Pittman: Portfolio</title>
 
     <!-- Hmm, what is the impact of web fonts on speed? Measure it... -->
+    <!-- tjg
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    -->
 
     <link href="css/style.css" rel="stylesheet">
     <!-- tjg
@@ -67,6 +69,14 @@
         var l = document.createElement('link'); l.rel = 'stylesheet';
         l.href = 'css/print.css';
         var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+
+        var l2 = document.createElement('link'); l2.rel = 'stylesheet';
+        l2.href = 'css/footer.css';
+        h.parentNode.insertBefore(l2, h);
+
+        var l3 = document.createElement('link'); l3.rel = 'stylesheet';
+        l3.href = '//fonts.googleapis.com/css?family=Open+Sans:400,700';
+        h.parentNode.insertBefore(l3, h);
       };
       var raf = requestAnimationFrame || mozRequestAnimationFrame ||
           webkitRequestAnimationFrame || msRequestAnimationFrame;
