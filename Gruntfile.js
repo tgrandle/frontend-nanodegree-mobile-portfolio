@@ -22,7 +22,24 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      //
+      js: {
+        files: ['<%= config.app %>/scripts/{,*/}*.js'],
+        tasks: ['jshint']
+      }
+    },
+
+
+    // Make sure code styles are up to par and there are no obvious mistakes
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish')
+      },
+      all: [
+        'Gruntfile.js',
+        //'<%= config.app %>/js/{,*/}*.js',
+        '<%= config.app %>/views/js/{,*/}*.js'
+      ]
     },
 
     // Renames files for browser caching purposes
@@ -286,6 +303,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'newer:jshint',
     'build'
   ]);
 };
