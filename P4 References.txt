@@ -1,0 +1,13 @@
+P4 References:
+
+https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization#lossless-vs-lossy-image-compression
+http://gruntjs.com/getting-started
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/
+http://csstriggers.com/
+
+https://github.com/udacity/fend-office-hours/tree/master/Web%20Optimization/Effective%20Optimizations%20for%2060%20FPS
+
+http://www.w3schools.com/js/js_window_screen.asp
+https://github.com/yeoman/grunt-usemin
+https://github.com/gruntjs/grunt-contrib-uglify
