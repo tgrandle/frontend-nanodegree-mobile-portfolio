@@ -538,31 +538,16 @@ function updatePositions() {
 
   //this should be faster than querySelectorAll
   var items = document.getElementsByClassName('mover');
-  var foo = document.body.scrollTop;
-  var bar0 = Math.sin((foo / 1250) + 0);
-  var bar1 = Math.sin((foo / 1250) + 1);
-  var bar2 = Math.sin((foo / 1250) + 2);
-  var bar3 = Math.sin((foo / 1250) + 3);
-  var bar4 = Math.sin((foo / 1250) + 4);
+  var scrollTop = document.body.scrollTop;
+  var phases = [];
+  phases[0] = Math.sin((scrollTop / 1250) + 0);
+  phases[1] = Math.sin((scrollTop / 1250) + 1);
+  phases[2] = Math.sin((scrollTop / 1250) + 2);
+  phases[3] = Math.sin((scrollTop / 1250) + 3);
+  phases[4]= Math.sin((scrollTop / 1250) + 4);
 
   for (var i = 0; i < items.length; i++) {
-    var p = i % 5;
-    var phase;
-    if(p === 0){
-      phase = bar0;
-    }
-    if(p === 1){
-      phase = bar1;
-    }
-    if(p === 2){
-      phase = bar2;
-    }
-    if(p === 3){
-      phase = bar3;
-    }
-    if(p === 4){
-      phase = bar4;
-    }
+    var phase = phases[i%5];
 
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
